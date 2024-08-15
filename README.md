@@ -1,5 +1,4 @@
 # Proxy Checker
-================
 
 A Python script to check the validity of proxies in a list.
 
