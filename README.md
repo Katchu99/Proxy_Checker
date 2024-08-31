@@ -1,23 +1,57 @@
 # Proxy Checker
 
-A Python script to check the validity of proxies in a list.
+## Overview
 
-## Description
-
-This script reads a list of proxies from a file (`proxies.txt`), checks each proxy using multiple processes, and writes the working proxies to another file (`working_proxies.txt`).
+Proxy Checker is a Python script designed to verify the validity of various proxies. It supports multiple proxy types, including HTTP, HTTPS, SOCKS4, and SOCKS5. The script uses multiprocessing to efficiently check each proxy and outputs the working proxies to a file.
 
 ## Features
 
-* Supports HTTP, HTTPS, SOCKS4, and SOCKS5 proxies
-* Uses multiple processes to speed up the checking process
-* Writes working proxies to a file for easy use
+- **Supports Multiple Proxy Types:** HTTP, HTTPS, SOCKS4, and SOCKS5.
+- **Multiprocessing:** Utilizes multiple processes to speed up proxy validation.
+- **Customizable Input:** Reads proxies from a `proxies.txt` file.
+- **Output:** Writes valid proxies to a `working_proxies.txt` file for easy usage.
 
 ## Requirements
 
-* Python 3.x
-* [requests](cci:4://c:/Users/Maari/Desktop/Project/Proxy_Checker/proxy_checker.py:0:0-14:0) library
-* [socks](cci:1://c:/Users/Maari/Desktop/Project/Proxy_Checker/proxy_checker.py:34:0-48:19) library
+- Python 3.x
+- Required Libraries:
+  - `requests`
+  - `socks`
+  - `multiprocessing`
+
+## Installation
+
+To install the required Python libraries, run:
+
+```bash
+pip install requests pysocks
+```
 
 ## Usage
 
-1. Create a file named `proxies.txt` with the list of proxies in the following format:
+1. **Prepare the Proxy List:** 
+   - Create a file named `proxies.txt` in the root directory of the project.
+   - The file should contain proxies in the following format:
+
+   ```plaintext
+   http 192.168.1.1 8080
+   socks5 192.168.1.2 1080
+   ```
+   - Comments can be added by prefixing the line with `#`.
+
+2. **Run the Script:**
+
+   Execute the script using Python:
+
+   ```bash
+   python proxy_checker.py
+   ```
+
+3. **Check the Output:**
+   - Valid proxies will be written to `working_proxies.txt`.
+
+## Contributing
+
+Feel free to fork this repository, make improvements, and submit pull requests. Any enhancements to the proxy checking logic or support for additional proxy types are welcome!
+
+
